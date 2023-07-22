@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--light-grey);
+  min-height: 100%;
+}
+
+button {
+  border: none;
+}
+
+/* ************************ */
+
+:root {
+  --purple: hsl(259, 100%, 65%);
+  --light-red: hsl(0, 100%, 67%);
+  --white: hsl(0, 0%, 100%);
+  --off-white: hsl(0, 0%, 94%);
+  --light-grey: hsl(0, 0%, 86%);
+  --smokey-grey: hsl(0, 1%, 44%);
+  --off-black: hsl(0, 0%, 8%);
+}
+
+.container {
+  max-width: 25rem;
+  margin: 4.6875rem auto;
+  padding: 0 0.625rem;
+}
+
+.app {
+  .app__content {
+    padding: 1.5625rem;
+    border-radius: 0.625rem;
+    border-bottom-right-radius: 6.25rem;
+    background-color: var(--white);
+  }
+
+  .app__form {
+    height: 5.25rem;
+  }
+}
+
+.form {
+  .form__content {
+    position: relative;
+    display: flex;
+    gap: 0.9375rem;
+    padding-bottom: 0.9375rem;
+    border-bottom: 0.0625rem solid var(--light-grey);
+  }
+
+  .form__label {
+    font-size: 0.4375rem;
+    text-transform: uppercase;
+    letter-spacing: 0.125rem;
+    line-height: 214%;
+    color: var(--smokey-grey);
+  }
+
+  & input {
+    font-weight: 800;
+    width: 4.6875rem;
+    height: 2.1875rem;
+    border-radius: 0.1875rem;
+    color: var(--off-black);
+    border: 0.0625rem solid var(--light-grey);
+    padding: 0px 0.625rem;
+
+    &::placeholder {
+      color: var(--smokey-grey);
+    }
+  }
+
+  .form__button {
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    bottom: -1.5rem;
+    width: 3.125rem;
+    height: 3.125rem;
+    border-radius: 50%;
+    background-color: var(--purple);
+
+    & img {
+      display: flex;
+      margin: 0 auto;
+      max-height: 1.5625rem;
+    }
+  }
+}
+
+.info {
+  .info__text {
+    line-height: 107%;
+    font-size: 2.625rem;
+    font-weight: 800;
+    font-style: italic;
+    color: var(--off-black);
+
+    & span {
+      color: var(--purple);
+    }
+  }
+}
+
+/* MEDIA (MOBILE) */
+
+@media (max-width: 767px) {
+  .app {
+    .app__form {
+      height: 9.375rem;
+    }
+  }
+
+  .form {
+    .form__content {
+      padding-bottom: 3.125rem;
+    }
+
+    .form__button {
+      right: 42.4%;
+    }
+
+    .form__button {
+      & img {
+        max-height: 1.25rem;
+      }
+    }
+  }
+}

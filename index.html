@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:italic,700,800italic&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Age calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="app">
+        <div class="app__content">
+          <form class="app__form form">
+            <div class="form__content">
+              <div>
+                <p class="form__label">Day</p>
+                <input id="day" type="text" placeholder="DD" />
+              </div>
+              <div>
+                <p class="form__label">Month</p>
+                <input id="month" type="text" placeholder="MM" />
+              </div>
+              <div>
+                <p class="form__label">Year</p>
+                <input id="year" type="text" placeholder="YYYY" />
+              </div>
+              <button class="form__button" type="button">
+                <img src="/assets/images/icon-arrow.svg" alt="Image" />
+              </button>
+            </div>
+          </form>
+          <div class="info">
+            <div class="info__content">
+              <p class="info__text years"><span>- -</span> years</p>
+              <p class="info__text months"><span>- -</span> months</p>
+              <p class="info__text days"><span>- -</span> days</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
