@@ -41,7 +41,7 @@ button {
   }
 
   .app__form {
-    height: 5.25rem;
+    height: 6.25rem;
   }
 }
 
@@ -91,6 +91,21 @@ button {
       margin: 0 auto;
       max-height: 1.5625rem;
     }
+  }
+
+  & input.empty-error {
+    border-color: var(--light-red);
+  }
+
+  .form__label.empty-error {
+    color: var(--light-red);
+  }
+
+  .error-empty {
+    font-style: italic;
+    font-size: 6px;
+    color: var(--light-red);
+    padding-top: 3px;
   }
 }
 
