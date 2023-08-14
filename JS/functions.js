@@ -37,10 +37,9 @@ function findCorrectValue(array, userValue) {
 
 export function calculateAge(dataBirthDay) {
   const birth = dataBirthDay.toReversed().join("-");
-  const newBirth = birth.length === 9 ? birth.replace(/\-/, "-0") : birth;
 
   const dataTime = {
-    birthDate: new Date(newBirth),
+    birthDate: new Date(birth),
     currentDate: new Date(),
   };
 
@@ -62,8 +61,15 @@ function countDays({ birthDate, currentDate }) {
     nextBirthday.setFullYear(nextBirthday.getFullYear() + 1);
   }
 
-  const oneDay = 24 * 60 * 60 * 1000;
-  const daysDiff = Math.floor((nextBirthday - currentDate) / oneDay);
+  const hoursInDay = 24;
+  const minutesInHour = 60;
+  const secsInMinute = 60;
+  const milliSecInSec = 1000;
+
+  const millSecInOneDay =
+    hoursInDay * minutesInHour * secsInMinute * milliSecInSec;
+
+  const daysDiff = Math.floor((nextBirthday - currentDate) / millSecInOneDay);
 
   const days = document.querySelector(".days").querySelector("span");
   days.innerText = daysDiff;
@@ -79,8 +85,9 @@ function countMonts({ birthDate, currentDate }) {
   if (nextBirthday < currentDate) {
     nextBirthday.setFullYear(nextBirthday.getFullYear() + 1);
   }
+  const AllMonths = 12;
   const monthsDiff =
-    (nextBirthday.getFullYear() - currentDate.getFullYear()) * 12 +
+    (nextBirthday.getFullYear() - currentDate.getFullYear()) * AllMonths +
     (nextBirthday.getMonth() - currentDate.getMonth());
 
   const months = document.querySelector(".months").querySelector("span");
@@ -89,9 +96,18 @@ function countMonts({ birthDate, currentDate }) {
 
 function countYears({ birthDate, currentDate }) {
   const ageInMilliseconds = currentDate - birthDate;
+
+  const millSecInSec = 1000;
+  const secsInMinute = 60;
+  const minutesInHour = 60;
+  const hoursInDay = 24;
+  const daysInYear = 365.25;
+
   const ageInYears = Math.floor(
-    ageInMilliseconds / (1000 * 60 * 60 * 24 * 365.25)
+    ageInMilliseconds /
+      (millSecInSec * secsInMinute * minutesInHour * hoursInDay * daysInYear)
   );
+
   const years = document.querySelector(".years").querySelector("span");
   years.innerText = ageInYears;
 }
