@@ -103,7 +103,7 @@ button {
 
   .error-empty {
     font-style: italic;
-    font-size: 6px;
+    font-size: 0.5rem;
     color: var(--light-red);
     padding-top: 3px;
   }
